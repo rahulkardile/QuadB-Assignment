@@ -1,7 +1,14 @@
+import { useSelector } from "react-redux";
 import Input from "../components/Input";
 import Note from "../components/Note";
+import { UserStates } from "../Redux/Store";
 
 const Home = () => {
+
+  const notes = useSelector((state: UserStates  )=> { state.notes })
+
+  console.log(notes);
+
   return (
     <section className="w-screen m-auto flex flex-col">
       <Input />

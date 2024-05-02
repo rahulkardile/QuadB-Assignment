@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import UserReducer from "./slice/UserSlice";
 import storage from "redux-persist/lib/storage";
 import persistCombineReducers from "redux-persist/es/persistCombineReducers";
-
+import NoteSlice from "./slice/NoteSlice";
 
 const persistConfige = {
   key: "root",
@@ -10,7 +10,7 @@ const persistConfige = {
   storage
 }
 
-const persistedReducer = persistCombineReducers(persistConfige, { user: UserReducer.reducer });
+const persistedReducer = persistCombineReducers(persistConfige, { user: UserReducer.reducer, notes: NoteSlice.reducer });
 
 export const store = configureStore({
   reducer: persistedReducer,
