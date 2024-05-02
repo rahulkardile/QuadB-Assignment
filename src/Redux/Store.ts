@@ -10,7 +10,7 @@ const persistConfige = {
   storage
 }
 
-const persistedReducer = persistCombineReducers(persistConfige, { user: UserReducer.reducer, notes: NoteSlice.reducer });
+const persistedReducer = persistCombineReducers(persistConfige, { user: UserReducer.reducer, Todos: NoteSlice.reducer });
 
 export const store = configureStore({
   reducer: persistedReducer,

@@ -14,7 +14,7 @@ const Note: FC<NoteInterface> = (props) => {
   }
 
   return (
-    <div className="w-[350px] h-auto flex flex-col border rounded-lg">
+    <div className="w-[350px] sm:w-[270px] md:w-[300px] lg:w-[370px] h-auto flex flex-col border rounded-lg">
       <div className="p-4 flex flex-col gap-1 h-auto border-b mx-2">
         <h1 className="font-semibold text-sm">{props.title}</h1>
         <p className="line-clamp-4 text-xs">

@@ -5,7 +5,7 @@ import { UserStates } from "../Redux/Store";
 
 const Home = () => {
 
-  const notes = useSelector((state: UserStates  )=> { state.notes.todos })
+  const notes = useSelector((state: UserStates  )=> { state.Todos })
   console.log(notes);
 
   return (
