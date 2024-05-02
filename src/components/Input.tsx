@@ -1,6 +1,5 @@
 const Input = () => {
 
-
   return (
     <div className=" m-auto mt-7 w-[70%] sm:w-[60%] md:w-[50%] shadow-[-1px_4px_16px_0px_#718096] rounded-lg bg-white">
         <form className="flex flex-col">

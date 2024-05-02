@@ -12,14 +12,14 @@ const Header = () => {
   return (
     <header className="flex flex-row justify-between items-center p-4 border-b mx-6">
       <div className="flex gap-1 items-center font-bold text-xl ">
-        <SiGooglekeep className="text-yellow-400 text-2xl" />
-        <Link to={"/"} ><h1 className="text-base">Keeper - QuadB</h1></Link>
+        <SiGooglekeep className="text-yellow-400 text-lg sm:text-2xl" />
+        <Link to={"/"} ><h1 className="text-sm sm:text-base">Keeper - QuadB</h1></Link>
       </div>
 
-      <nav className="flex text-sm gap-2 mr-4">
-        <Link to={"/"}>Home</Link>
+      <nav className="flex text-xs sm:text-sm gap-2 mr-4">
+        <Link to={"/"} className="hover:underline p-1">Home</Link>
         {
-          user?.name ? <button>logout</button> :  <Link to={"/register"}>Register</Link>
+          user?.name ? <button className="hover:underline p-1">logout</button> :  <Link className="hover:underline p-1" to={"/register"}>Register</Link>
         }
       </nav>
     </header>
