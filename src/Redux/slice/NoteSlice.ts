@@ -1,23 +1,31 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { NoteInterface } from "../../TypeScript/Interface";
+import { createSlice } from "@reduxjs/toolkit";
+import { TodoInterface } from "../../TypeScript/Interface";
 
-type InitialState = {
-  note: NoteInterface[]
-};
+interface TodosListInterface {
+  todos: TodoInterface[];
+}
 
-const initialState: InitialState = {
-  note: []
+const initialState: TodosListInterface = {
+  todos: [],
 };
 
 const NoteSlice = createSlice({
-    name: "note",
-    initialState,
-    reducers: {
-        addNote: (state, action: PayloadAction<NoteInterface>)=>{
-            state.note.push(action.payload);
-        }
-    }
-})
+  name: "note",
+  initialState,
+  reducers: {
+    addNote: (state, { payload: { title, content } }) => {
+      const todo = {
+        title: title,
+        content: content,
+      };
+
+      state.todos.push(todo);
+    },
+    removeAll: (state) => {
+      state.todos = [];
+    },
+  },
+});
 
 export default NoteSlice;
-export const { addNote } = NoteSlice.actions
+export const { addNote, removeAll } = NoteSlice.actions;

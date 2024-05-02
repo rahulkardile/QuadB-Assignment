@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { UserStates } from "../Redux/Store";
 import { removeUser } from "../Redux/slice/UserSlice";
+import { removeAll } from "../Redux/slice/NoteSlice";
 
 const Header = () => {
 
@@ -13,6 +14,7 @@ const Header = () => {
   
   const handleLog = () => {
     dispatch(removeUser());
+    dispatch(removeAll());
     navigate("/")
     console.log("logout");
   }

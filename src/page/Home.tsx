@@ -5,8 +5,7 @@ import { UserStates } from "../Redux/Store";
 
 const Home = () => {
 
-  const notes = useSelector((state: UserStates  )=> { state.notes })
-
+  const notes = useSelector((state: UserStates  )=> { state.notes.todos })
   console.log(notes);
 
   return (
@@ -18,14 +17,7 @@ const Home = () => {
 
         <section className="flex flex-row my-4 gap-5 flex-wrap overflow-hidden items-center justify-center">
           
-          <Note
-            id="1"
-            content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt ratione
-          neque vero itaque quia explicabo labore quibusdam nulla voluptatem,
-          soluta modi, cumque asperiores fugiat, minima dolorum! Rerum incidunt
-          accusamus sequi."
-            title="Today's Work"
-          />
+    
 
           <Note
             id="1"

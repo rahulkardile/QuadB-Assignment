@@ -26,6 +26,7 @@ const Input = () => {
   const handleManual = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispath(addNote(formData));
+    console.log("redux");
   };
 
   return (
