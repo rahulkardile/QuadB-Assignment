@@ -25,7 +25,8 @@ const Home = () => {
           )) : (
             <div className="p-3 mt-7 flex flex-col items-center gap-1">
               <FaArrowCircleUp className="text-yellow-300 animate-bounce w-7 h-7" />
-              <h2 className="font-semibold">Please add todo...</h2>
+              <h2 className="font-semibold">Ready to be productive? Add a task and we'll get you started.
+</h2>
             </div>
           )}
         </section>
