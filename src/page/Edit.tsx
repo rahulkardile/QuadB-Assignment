@@ -1,7 +1,7 @@
 import React, { FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import { addNote, updateNote } from "../Redux/slice/NoteSlice";
+import { updateNote } from "../Redux/slice/NoteSlice";
 import { NoteInterface } from "../TypeScript/Interface";
 
 const Edit = () => {
