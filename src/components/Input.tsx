@@ -1,6 +1,5 @@
 import { FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { addNote } from "../Redux/slice/NoteSlice";
 import { NoteInterface } from "../TypeScript/Interface";
 
@@ -26,6 +25,10 @@ const Input = () => {
   const handleManual = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispath(addNote(formData));
+    setFormData({
+    content: "",
+    title: "",
+  })
     console.log("redux");
   };
 

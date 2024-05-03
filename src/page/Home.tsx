@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import Input from "../components/Input";
 import Note from "../components/Note";
 import { UserStates } from "../Redux/Store";
+import { v4 as uuidv4 } from "uuid";
 
 const Home = () => {
   const { todos } = useSelector((state: UserStates) => state.Todos);
@@ -17,6 +18,7 @@ const Home = () => {
           {todos.map((item, i) => (
             <Note
               key={i}
+              id={item.id}
               title={item.title}
               content={item.content}
             />
