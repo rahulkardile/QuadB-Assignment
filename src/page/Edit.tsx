@@ -1,12 +1,18 @@
-import { FormEvent, useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addNote } from "../Redux/slice/NoteSlice";
-import { NoteInterface2 } from "../TypeScript/Interface";
+import { useLocation, useNavigate } from "react-router-dom";
+import { addNote, updateNote } from "../Redux/slice/NoteSlice";
+import { NoteInterface } from "../TypeScript/Interface";
 
-const Input = () => {
-  const [formData, setFormData] = useState<NoteInterface2>({
-    content: "",
-    title: "",
+const Edit = () => {
+  const location = useLocation();
+  const Note: NoteInterface = location.state;
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState<NoteInterface>({
+    id: Note.id,
+    content: Note.content,
+    title: Note.title,
   });
 
   const dispath = useDispatch();
@@ -24,11 +30,13 @@ const Input = () => {
 
   const handleManual = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispath(addNote(formData));
+    dispath(updateNote(formData));
     setFormData({
+      id: "",
       content: "",
       title: "",
     });
+    navigate("/");
   };
 
   return (
@@ -49,18 +57,18 @@ const Input = () => {
             value={formData.content}
             id="content"
             onChange={handleChange}
-            className="outline-none h-14 text-xs focus:border-b p-3"
+            className="outline-none h-36 text-xs focus:border-b p-3"
           />
         </div>
         <button
           className="bg-yellow-400 text-white font-semibold mb-2 rounded-md p-3 w-[30%] m-auto duration-300 hover:scale-105"
           type="submit"
         >
-          Submit
+          Update
         </button>
       </form>
     </div>
   );
 };
 
-export default Input;
+export default Edit;
