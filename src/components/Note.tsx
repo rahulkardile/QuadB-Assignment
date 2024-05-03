@@ -29,11 +29,11 @@ const Note: FC<NoteInterface> = (props) => {
   return (
     <>
       <div
-        className={`w-[350px] sm:w-[270px] md:w-[300px] lg:w-[370px] h-auto flex flex-col border rounded-lg`}
+        className={`w-[350px] sm:w-[270px] md:w-[300px] lg:w-[370px] h-[170px] flex flex-col border rounded-lg`}
       >
         <div className="p-4 flex flex-col gap-1 h-auto border-b mx-2">
           <h1 className="font-semibold text-sm">{props.title}</h1>
-          <p className="line-clamp-4 text-xs">{props.content}</p>
+          <p className="line-clamp-4 h-[66px] text-xs">{props.content}</p>
         </div>
         <div className="flex flex-row gap-5 m-auto p-4">
           <FaRegEdit
