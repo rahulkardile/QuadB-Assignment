@@ -11,6 +11,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user } = useSelector((state: UserStates) => state.user )
+  const { todos } = useSelector((state: UserStates) => state.Todos )
   
   const handleLog = () => {
     dispatch(removeUser());
@@ -18,6 +19,10 @@ const Header = () => {
     navigate("/")
     console.log("logout");
   }
+
+todos.map((i)=>{
+  console.log("todo " + i.content );
+})
 
   return (
     <header className="flex flex-row justify-between items-center p-4 border-b mx-6">
