@@ -1,10 +1,10 @@
 import { FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addNote } from "../Redux/slice/NoteSlice";
-import { NoteInterface } from "../TypeScript/Interface";
+import { NoteInterface2 } from "../TypeScript/Interface";
 
 const Input = () => {
-  const [formData, setFormData] = useState<NoteInterface>({
+  const [formData, setFormData] = useState<NoteInterface2>({
     content: "",
     title: "",
   });
@@ -26,10 +26,9 @@ const Input = () => {
     e.preventDefault();
     dispath(addNote(formData));
     setFormData({
-    content: "",
-    title: "",
-  })
-    console.log("redux");
+      content: "",
+      title: "",
+    });
   };
 
   return (
@@ -38,6 +37,7 @@ const Input = () => {
         <div className="flex gap-3 flex-col my-4 mx-5">
           <input
             type="text"
+            value={formData.title}
             required
             onChange={handleChange}
             id="title"
@@ -46,7 +46,7 @@ const Input = () => {
           />
           <textarea
             placeholder="Take a note..."
-            required
+            value={formData.content}
             id="content"
             onChange={handleChange}
             className="outline-none h-14 text-xs focus:border-b p-3"

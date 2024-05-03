@@ -4,6 +4,11 @@ export interface NoteInterface {
   content: string;
 }
 
+export interface NoteInterface2 {
+  title: string;
+  content: string;
+}
+
 export interface TodoInterface {
   id: string;
   title: string;

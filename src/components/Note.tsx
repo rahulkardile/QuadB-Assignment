@@ -24,10 +24,12 @@ const Note: FC<NoteInterface> = (props) => {
         <p className="line-clamp-4 text-xs">{props.content}</p>
       </div>
       <div className="flex flex-row gap-5 m-auto p-4">
+        
         <FaRegEdit
           onClick={() => handleEdit(props.id)}
           className="duration-300 cursor-pointer hover:text-green-500 "
         />
+
         <MdDeleteForever
           onClick={() => handleDelete(props.id)}
           className="duration-300 cursor-pointer text-lg hover:text-red-500 "
