@@ -40,7 +40,6 @@ const Note: FC<NoteInterface> = (props) => {
             onClick={() => handleEdit()}
             className="duration-300 cursor-pointer hover:text-green-500"
           />
-
           <MdDeleteForever
             onClick={() => handleDelete(props.id)}
             className="duration-300 cursor-pointer text-lg hover:text-red-500 "
